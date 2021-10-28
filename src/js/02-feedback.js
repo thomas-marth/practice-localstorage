@@ -45,6 +45,16 @@ function onFormSubmit(evt) {
  * - Можно добавить throttle
  */
 
+// сделать так чтобы сохраняло не только сообщение но и имя, и все в одном обьекте
+
+// const formData = {};
+// refs.form.addEventListener('input', e => {
+//   // console.log(e.target.name);
+//   // console.log(e.target.value);
+//   formData[e.target.name] = e.target.value;
+//   console.log(formData);
+// });
+
 const formData = {};
 
 function onInput() {
@@ -82,8 +92,6 @@ function onInput() {
  * - Если там что-то было, обновляем DOM
  */
 function savedInputData() {
-  // const savedNameData = localStorage.getItem('formData');
-  // const savedMessageData = JSON.parse(localStorage.getItem(formData));
   const parsedData = JSON.parse(localStorage.getItem('formData'));
   console.log('localStorageData', localStorage.getItem('formData'));
 
@@ -95,16 +103,3 @@ function savedInputData() {
     refs.textarea.value = parsedData.message;
   }
 }
-
-// Домой
-// сделать так чтобы сохраняло не только сообщение но и имя, и все в одном обьекте
-
-// const formData = {};
-
-// refs.form.addEventListener('input', e => {
-//   // console.log(e.target.name);
-//   // console.log(e.target.value);
-
-//   formData[e.target.name] = e.target.value;
-//   console.log(formData);
-// });
